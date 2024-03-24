@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +7,7 @@
 html body.page_index header {
   height: 75px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -186,17 +185,10 @@ html body.page_index footer h4 {
   justify-content: center;
 }
 
-html body.page_about {
-  background-image: url(../imagenes/FaroNO.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
 html body.page_about header {
-  /* Eliminado */
   height: 75px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -204,7 +196,6 @@ html body.page_about header {
   justify-content: center;
 }
 html body.page_about header ul {
-  /* Eliminado */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -212,7 +203,6 @@ html body.page_about header ul {
   list-style-type: none;
 }
 html body.page_about header .list-menu a {
-  /* Ajustado */
   margin-left: auto;
   text-decoration: none;
   font-size: 17px;
@@ -221,67 +211,138 @@ html body.page_about header .list-menu a {
   padding: 12px;
 }
 html body.page_about header .logo a {
-  /* Eliminado */
   justify-content: center;
   text-decoration: none;
   font-size: 47px;
   color: white;
   padding: 12px 24px;
   font-weight: 500;
-  /* Eliminado */
   display: flex;
   flex-direction: row;
-  justify-content: first baseline;
+  justify-content: baseline;
   align-items: center;
   text-decoration: none;
 }
-html body.page_about #heroAbout h1 {
-  /* Ajustado */
+html body.page_about .centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  width: 100%;
+}
+html body.page_about .position-relative {
+  position: relative;
+}
+html body.page_about .col-4 img {
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+@media screen and (max-width: 767px) {
+  html body.page_about .col-4 img {
+    width: 100%;
+    height: 100%;
+  }
+}
+html body.page_about .bg-light {
+  --bs-bg-opacity: 0;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+html body.page_about .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: white;
+}
+html body.page_about .navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  color: white;
+}
+html body.page_about .navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: 50;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+html body.page_about #hero {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  height: 100%;
+  background-image: url(../imagenes/about.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+html body.page_about #hero h1 {
   justify-self: center;
   align-items: left;
   font-size: 120px;
-  font-weight: 600;
-  margin-top: 90px;
-  margin-right: 600px;
+  font-weight: 400;
+  margin-bottom: 70px;
   color: white;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-html body.page_about #heroAbout p {
-  /* Ajustado */
-  justify-self: center;
+@media screen and (max-width: 767px) {
+  html body.page_about #hero h1 {
+    font-size: 70px;
+  }
+}
+html body.page_about #hero p {
+  justify-self: left;
   align-items: left;
   font-size: 40px;
-  margin-top: 120px;
-  color: white;
+  font-weight: 100;
   text-align: center;
+  margin-bottom: 70px;
+  color: white;
 }
-html body.page_about html, html body.page_about body {
-  overflow-x: hidden;
-  overflow-y: hidden;
+@media screen and (max-width: 767px) {
+  html body.page_about #hero p {
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+  }
 }
 html body.page_about footer {
   width: 100%;
-  height: 0%;
+  height: 7%;
   margin-bottom: 0;
-  background-color: black;
-  position: fixed;
-  bottom: 50;
+  background-color: transparent;
 }
 html body.page_about footer h4 {
-  color: white;
+  color: black;
   font-size: 50;
   font-weight: 100;
-  bottom: 0;
-  width: 100%;
-  height: 50px; /* Ajusta la altura según tus necesidades */
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
 }
 
 html body.page_shop header {
   height: 75px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -348,6 +409,9 @@ html body.page_shop .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: var(--bs-navbar-nav-link-padding-x);
   padding-left: var(--bs-navbar-nav-link-padding-x);
   color: white;
+}
+html body.page_shop html body.page_shop header ul a {
+  color: black;
 }
 html body.page_shop .navbar {
   --bs-navbar-padding-x: 0;
@@ -422,18 +486,10 @@ html body.page_shop footer h4 {
   justify-content: center;
 }
 
-html body.page_contact {
-  background-image: url(../imagenes/contacNew.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  overflow-x: hidden;
-}
 html body.page_contact header {
-  z-index: 100000000;
   height: 75px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -441,7 +497,6 @@ html body.page_contact header {
   justify-content: center;
 }
 html body.page_contact header ul {
-  z-index: 100000000;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -449,16 +504,14 @@ html body.page_contact header ul {
   list-style-type: none;
 }
 html body.page_contact header .list-menu a {
-  z-index: 100000000;
   margin-left: auto;
   text-decoration: none;
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 400;
   color: white;
   padding: 12px;
 }
 html body.page_contact header .logo a {
-  z-index: 100000000;
   justify-content: center;
   text-decoration: none;
   font-size: 47px;
@@ -471,68 +524,112 @@ html body.page_contact header .logo a {
   align-items: center;
   text-decoration: none;
 }
+html body.page_contact .centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  width: 100%;
+}
+html body.page_contact .position-relative {
+  position: relative;
+}
+html body.page_contact .col-4 img {
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+@media screen and (max-width: 767px) {
+  html body.page_contact .col-4 img {
+    width: 100%;
+    height: 100%;
+  }
+}
+html body.page_contact .bg-light {
+  --bs-bg-opacity: 0;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+html body.page_contact .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: white;
+}
+html body.page_contact .navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  color: white;
+}
+html body.page_contact .navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: 50;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
 html body.page_contact #hero {
   display: flex;
   flex-direction: column;
   justify-self: center;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   color: white;
+  height: 100%;
+  background-image: url(../imagenes/footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 html body.page_contact #hero h1 {
   justify-self: center;
-  align-items: center;
+  align-items: left;
   font-size: 120px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  margin-left: 50px;
+  font-weight: 400;
+  margin-bottom: 70px;
   color: white;
+}
+@media screen and (max-width: 767px) {
+  html body.page_contact #hero h1 {
+    font-size: 70px;
+  }
 }
 html body.page_contact #hero p {
-  font-size: 20px;
-  font-weight: 400;
-  margin-left: 170px;
-  margin-top: 20px;
-}
-html body.page_contact .contenedor {
-  position: absolute;
-  display: contents;
-  transform: translate(-50%, -50%);
-}
-html body.page_contact form label {
-  color: white;
-  font-size: 50px;
+  justify-self: left;
+  align-items: left;
+  font-size: 40px;
   font-weight: 100;
+  text-align: center;
+  margin-bottom: 70px;
+  color: white;
 }
-html body.page_contact form input {
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  font-weight: 200;
-  width: 270px;
-}
-html body.page_contact .row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 100;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
+@media screen and (max-width: 767px) {
+  html body.page_contact #hero p {
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+  }
 }
 html body.page_contact footer {
   width: 100%;
   height: 7%;
-  position: fixed;
-  bottom: 0;
-  background-color: black;
+  margin-bottom: 0;
+  background-color: transparent;
 }
 html body.page_contact footer h4 {
-  color: white;
+  color: black;
   font-size: 50;
   font-weight: 100;
   display: flex;
@@ -545,7 +642,7 @@ html body.page_contact footer h4 {
 html body.page_works header {
   height: 75px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -580,6 +677,61 @@ html body.page_works header .logo a {
   align-items: center;
   text-decoration: none;
 }
+html body.page_works .centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  width: 100%;
+}
+html body.page_works .position-relative {
+  position: relative;
+}
+html body.page_works .col-4 img {
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+@media screen and (max-width: 767px) {
+  html body.page_works .col-4 img {
+    width: 100%;
+    height: 100%;
+  }
+}
+html body.page_works .bg-light {
+  --bs-bg-opacity: 0;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+html body.page_works .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: white;
+}
+html body.page_works .navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+  color: white;
+}
+html body.page_works .navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: 50;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
 html body.page_works #hero {
   display: flex;
   flex-direction: column;
@@ -590,7 +742,7 @@ html body.page_works #hero {
   height: 100%;
   color: white;
   height: 100%;
-  background-image: url(../imagenes/madera1_2.jpg);
+  background-image: url(../imagenes/MaderaWall.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -600,26 +752,37 @@ html body.page_works #hero h1 {
   font-size: 120px;
   font-weight: 600;
   margin-bottom: 70px;
-  margin-right: 770px;
   color: white;
+}
+@media screen and (max-width: 767px) {
+  html body.page_works #hero h1 {
+    font-size: 70px;
+  }
 }
 html body.page_works #hero p {
   justify-self: left;
   align-items: left;
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
   margin-bottom: 70px;
-  margin-left: 300px;
   color: white;
+}
+@media screen and (max-width: 767px) {
+  html body.page_works #hero p {
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+  }
 }
 html body.page_works footer {
   width: 100%;
   height: 7%;
   margin-bottom: 0;
-  background-color: black;
+  background-color: transparent;
 }
 html body.page_works footer h4 {
-  color: white;
+  color: black;
   font-size: 50;
   font-weight: 100;
   display: flex;
