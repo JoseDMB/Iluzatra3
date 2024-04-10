@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +14,6 @@ html body.page_index header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 0;
 }
 html body.page_index header ul {
   display: flex;
@@ -26,10 +26,9 @@ html body.page_index header .list-menu a {
   margin-left: auto;
   text-decoration: none;
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 400;
   color: white;
   padding: 12px;
-  z-index: 1000;
 }
 html body.page_index header .logo a {
   justify-content: center;
@@ -38,76 +37,63 @@ html body.page_index header .logo a {
   color: white;
   padding: 12px 24px;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  text-decoration: none;
+}
+html body.page_index .centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  width: 100%;
+}
+html body.page_index .position-relative {
+  position: relative;
+}
+html body.page_index .col-4 img {
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+@media screen and (max-width: 767px) {
+  html body.page_index .col-4 img {
+    width: 100%;
+    height: 100%;
+  }
 }
 html body.page_index .bg-light {
-  --bs-bg-opacity: 1;
-  background-color: transparent;
+  --bs-bg-opacity: 0;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
-html body.page_index .nav-link {
-  display: block;
-  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
-  font-weight: var(--bs-nav-link-font-weight);
+html body.page_index .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
   color: white;
-  text-decoration: none;
-  margin-right: 9;
-  background: 0 0;
-  border: 0;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-}
-html body.page_index .container {
-  margin-top: 0%;
-  background-color: black;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: white;
 }
 html body.page_index .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: var(--bs-navbar-nav-link-padding-x);
   padding-left: var(--bs-navbar-nav-link-padding-x);
   color: white;
 }
-html body.page_index .navbar {
-  --bs-navbar-padding-x: 0;
-  --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: transparent;
-  --bs-navbar-hover-color: white;
-  --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
-  --bs-navbar-active-color: white;
-  --bs-navbar-brand-padding-y: 0.3125rem;
-  --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 50;
-  --bs-navbar-brand-color: white;
-  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-nav-link-padding-x: 0.5rem;
-  --bs-navbar-toggler-padding-y: 0.25rem;
-  --bs-navbar-toggler-padding-x: 0.75rem;
-  --bs-navbar-toggler-font-size: 1.25rem;
-  --bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3e%3cpath stroke="rgba%2833, 37, 41, 0.75%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e);
-  --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
-  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
-  --bs-navbar-toggler-focus-width: 0.25rem;
-  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
-}
-html body.page_index .navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-image: var(--bs-navbar-toggler-icon-bg);
-  border-block-color: white;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
 html body.page_index .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
-  font-size: var(--bs-navbar-brand-font-size);
+  font-size: 50;
   color: white;
   text-decoration: none;
   white-space: nowrap;
@@ -118,64 +104,54 @@ html body.page_index #hero {
   justify-self: center;
   align-items: center;
   justify-content: center;
-  font-size: 120px;
   width: 100%;
-  height: 50%;
+  height: 100%;
   color: white;
-  background-image: url(../imagenes/backG.jpg);
+  height: 100%;
+  background-image: url(../imagenes/SeeLamps.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-@media screen and (max-width: 768px) {
-  html body.page_index html body.page_index #hero-half {
-    display: flex;
-    flex-direction: row;
-    justify-self: left;
-    align-items: center;
-    justify-content: left;
-    width: 100%;
-    height: 50%;
-    color: white;
-    background-color: #dc3545;
-    background-image: url(../imagenes/footer.jpg), url(../imagenes/SeeLamps.jpg);
-    background-position: center top, center bottom;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 100% 50%, 100% 50%;
+html body.page_index #hero h1 {
+  justify-self: center;
+  align-items: left;
+  font-size: 120px;
+  font-weight: 200;
+  margin-bottom: 200px;
+  color: white;
+}
+@media screen and (max-width: 767px) {
+  html body.page_index #hero h1 {
+    font-size: 70px;
+    margin-bottom: 300px;
   }
 }
-html body.page_index #hero-half {
-  display: flex;
-  flex-direction: row;
+html body.page_index #hero p {
   justify-self: left;
-  align-items: center;
-  justify-content: left;
-  width: 100%;
-  height: 50%;
+  align-items: left;
+  font-size: 59px;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 28px;
   color: white;
-  background-color: #dc3545;
-  background-image: url(../imagenes/footer.jpg), url(../imagenes/SeeLamps.jpg);
-  background-position: left, right;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 50%, 50%;
 }
-html body.page_index #hero-half h1 {
-  font-size: 80px;
-  font-weight: 400;
-}
-html body.page_index #hero-half a {
-  margin-left: 17%;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+@media screen and (max-width: 767px) {
+  html body.page_index #hero p {
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 30px;
+  }
 }
 html body.page_index footer {
   width: 100%;
   height: 7%;
   margin-bottom: 0;
-  background-color: black;
+  background-color: transparent;
 }
 html body.page_index footer h4 {
-  color: white;
+  color: black;
   font-size: 50;
   font-weight: 100;
   display: flex;
@@ -304,6 +280,7 @@ html body.page_about #hero h1 {
 @media screen and (max-width: 767px) {
   html body.page_about #hero h1 {
     font-size: 70px;
+    margin-top: 25%;
   }
 }
 html body.page_about #hero p {
@@ -339,6 +316,9 @@ html body.page_about footer h4 {
   justify-content: center;
 }
 
+html body.page_shop main {
+  background-color: black;
+}
 html body.page_shop header {
   height: 75px;
   width: 100%;
@@ -390,73 +370,108 @@ html body.page_shop #hero {
   background-repeat: no-repeat;
   background-size: cover;
 }
-html body.page_shop .nav-link {
-  display: block;
-  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
-  font-weight: var(--bs-nav-link-font-weight);
-  color: white;
-  text-decoration: none;
-  margin-right: 9;
-  background: 0 0;
-  border: 0;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+@media screen and (max-width: 767px) {
+  html body.page_shop .col-6 {
+    width: 100%;
+  }
 }
-html body.page_shop .container {
-  background-color: black;
+html body.page_shop .col-6 img {
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+@media screen and (max-width: 767px) {
+  html body.page_shop .col-6 img {
+    width: 100%;
+  }
+}
+html body.page_shop .color-background {
+  background: rgb(255, 0, 112);
+  background: radial-gradient(circle, rgb(255, 0, 112) 0%, rgb(0, 243, 255) 100%);
+}
+html body.page_shop .bg-light {
+  --bs-bg-opacity: 0;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+html body.page_shop .custom-border {
+  border: 2px rgb(255, 0, 112);
+  border-radius: 5px;
+}
+html body.page_shop .nav-link-contact {
+  display: flex;
+  font-size: 30px;
+  margin-top: 300px;
+  color: white;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  html body.page_shop .nav-link-contact {
+    font-size: 15px;
+  }
+}
+html body.page_shop .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: white;
+}
+html body.page_shop .centered-text {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  width: 100%;
+  font-size: 100px;
+  margin-top: 10%;
+}
+@media screen and (max-width: 767px) {
+  html body.page_shop .centered-text {
+    font-size: 200%;
+  }
+}
+html body.page_shop .centered-text-price {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  font-weight: 400;
+  width: 100%;
+  font-size: 100px;
+  border-bottom: black;
+}
+@media screen and (max-width: 767px) {
+  html body.page_shop .centered-text-price {
+    font-size: 200%;
+  }
+}
+html body.page_shop .centered-text-contact {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa el 100% de la altura de la ventana gráfica */
 }
 html body.page_shop .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: var(--bs-navbar-nav-link-padding-x);
   padding-left: var(--bs-navbar-nav-link-padding-x);
   color: white;
 }
-html body.page_shop html body.page_shop header ul a {
-  color: black;
-}
-html body.page_shop .navbar {
-  --bs-navbar-padding-x: 0;
-  --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: transparent;
-  --bs-navbar-hover-color: white;
-  --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
-  --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-brand-padding-y: 0.3125rem;
-  --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 50;
-  --bs-navbar-brand-color: white;
-  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-nav-link-padding-x: 0.5rem;
-  --bs-navbar-toggler-padding-y: 0.25rem;
-  --bs-navbar-toggler-padding-x: 0.75rem;
-  --bs-navbar-toggler-font-size: 1.25rem;
-  --bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3e%3cpath stroke="rgba%2833, 37, 41, 0.75%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e);
-  --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
-  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
-  --bs-navbar-toggler-focus-width: 0.25rem;
-  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
-}
-html body.page_shop .navbar .navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-image: var(--bs-navbar-toggler-icon-bg);
-  border-block-color: white;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
-html body.page_shop .navbar .navbar-brand {
+html body.page_shop .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
-  font-size: var(--bs-navbar-brand-font-size);
+  font-size: 50;
   color: white;
   text-decoration: none;
   white-space: nowrap;
@@ -471,8 +486,6 @@ html body.page_shop #hero h1 {
 }
 html body.page_shop footer {
   width: 100%;
-  height: 7%;
-  margin-bottom: 0;
   background-color: black;
 }
 html body.page_shop footer h4 {
@@ -684,8 +697,14 @@ html body.page_works .centered-text {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  font-weight: 200;
+  font-weight: 600;
+  font-size: 55px;
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  html body.page_works .centered-text {
+    font-size: 16px;
+  }
 }
 html body.page_works .position-relative {
   position: relative;
